@@ -62,6 +62,8 @@ class ElfinderServiceProvider extends ServiceProvider {
             $router->get('tinymce4', ['as' => 'elfinder.tinymce4', 'uses' => 'ElfinderController@showTinyMCE4']);
             $router->get('ckeditor', ['as' => 'elfinder.ckeditor', 'uses' => 'ElfinderController@showCKeditor4']);
         });
+
+        $router->aliasMiddleware('target-fs', TargetRequiredMiddleware::class);
 	}
 
 	/**
