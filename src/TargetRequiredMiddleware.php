@@ -17,7 +17,7 @@ class TargetRequiredMiddleware{
      */
     public function handle($request, Closure $next){
 
-        if(!$request->has('target')){
+        if(!$request->has('target') and !$request->has('targets')){
             abort(400, 'A target directory is required');
         }
 
